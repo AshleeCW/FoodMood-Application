@@ -92,14 +92,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Username"
+        android:clickable="true"
+        android:text="MATT"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.272"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText3"
-        app:layout_constraintVertical_bias="0.016"
-        android:clickable="true"/>
+        app:layout_constraintVertical_bias="0.016" />
 
     <Button
         android:id="@+id/button"
