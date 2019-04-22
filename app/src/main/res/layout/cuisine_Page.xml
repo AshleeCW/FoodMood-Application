@@ -8,10 +8,14 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="379dp"
         android:layout_height="match_parent"
         android:gravity="right"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constrainedHeight="true"
+        app:layout_constrainedWidth="true"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <ImageView
             android:id="@+id/frenchFlag"
@@ -19,7 +23,7 @@
             android:layout_height="140dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="250dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="150dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,6 +39,7 @@
             android:layout_height="140dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="100dp"
+            android:layout_marginTop="60dp"
             android:layout_marginEnd="8dp"
             android:contentDescription="Main Logo for FoodMood"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -51,7 +56,7 @@
             android:layout_height="140dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
@@ -67,9 +72,13 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="379dp"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constrainedHeight="false"
+        app:layout_constrainedWidth="false"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <ImageView
             android:id="@+id/americanFlag"
@@ -93,7 +102,7 @@
             android:layout_height="140dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="60dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
@@ -112,7 +121,7 @@
             android:layout_height="140dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
@@ -173,13 +182,12 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="395dp"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="137dp">
+        tools:layout_editor_absoluteX="8dp">
 
         <EditText
             android:id="@+id/usaText"
