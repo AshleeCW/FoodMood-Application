@@ -10,12 +10,14 @@
     <LinearLayout
         android:layout_width="379dp"
         android:layout_height="match_parent"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:gravity="right"
         android:orientation="vertical"
         app:layout_constrainedHeight="true"
         app:layout_constrainedWidth="true"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/frenchFlag"
@@ -74,10 +76,12 @@
     <LinearLayout
         android:layout_width="379dp"
         android:layout_height="match_parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:orientation="vertical"
         app:layout_constrainedHeight="false"
         app:layout_constrainedWidth="false"
-        tools:layout_editor_absoluteX="32dp"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="0dp">
 
         <ImageView
@@ -184,10 +188,12 @@
     <LinearLayout
         android:layout_width="395dp"
         android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="8dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/usaText"
