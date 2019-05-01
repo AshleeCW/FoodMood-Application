@@ -33,7 +33,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.881"
-            app:srcCompat="@android:drawable/ic_menu_report_image" />
+            app:srcCompat="@drawable/franceFlagImage" />
 
         <ImageView
             android:id="@+id/britishFlag"
@@ -50,7 +50,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.533"
-            app:srcCompat="@android:drawable/ic_menu_report_image" />
+            app:srcCompat="@drawable/ukFlagImage" />
 
         <ImageView
             android:id="@+id/chinaFlag"
@@ -69,7 +69,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.533"
-            app:srcCompat="@android:drawable/ic_menu_report_image" />
+            app:srcCompat="@drawable/chinaFlagImage" />
 
     </LinearLayout>
 
@@ -91,14 +91,14 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="150dp"
             android:layout_marginEnd="8dp"
-            android:contentDescription="Main Logo for FoodMood"
+            android:contentDescription="@string/main_logo_for_foodmood"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.121"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.194"
-            app:srcCompat="@android:drawable/ic_menu_report_image" />
+            app:srcCompat="@mipmap/ic_launcher_foreground" />
 
         <ImageView
             android:id="@+id/italyFlag"
@@ -117,7 +117,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.194"
-            app:srcCompat="@android:drawable/ic_menu_report_image" />
+            app:srcCompat="@drawable/italyFlagImage" />
 
         <ImageView
             android:id="@+id/indianFlag"
@@ -136,7 +136,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.881"
-            app:srcCompat="@android:drawable/ic_menu_report_image" />
+            app:srcCompat="@drawable/indiaFlagImage" />
     </LinearLayout>
 
     <LinearLayout
@@ -210,8 +210,9 @@
 
         <EditText
             android:id="@+id/italyText"
-            android:layout_width="131dp"
+            android:layout_width="133.5dp"
             android:layout_height="50dp"
+            android:layout_marginLeft="1dp"
             android:layout_marginTop="150dp"
             android:layout_marginRight="100dp"
             android:ems="10"
