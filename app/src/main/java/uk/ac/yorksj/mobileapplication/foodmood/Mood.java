@@ -13,7 +13,7 @@ public class Mood {
     private int blue;
     private String genre;
 
-    Mood mood = new Mood(name, red, green, blue, genre);
+//    Mood mood = new Mood(name, red, green, blue, genre);
     //TODO try below with the above mood too. May not need the overloaded method
     String moodString = this.toString();
     /*Convert the mood to a String so it can be converted to bytes and saved in output stream*/
@@ -34,6 +34,9 @@ public class Mood {
         this.blue = blue;
         this.genre = genre;
         saveMood(name, context);
+    }
+    public String returnName() {
+        return this.name;
     }
 
     public Mood returnMood(){

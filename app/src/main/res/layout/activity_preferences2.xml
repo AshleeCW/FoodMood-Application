@@ -36,6 +36,24 @@
             app:layout_constraintVertical_bias="0.471" />
 
         <Button
+            android:id="@+id/load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Load"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.163"
+            app:layout_constraintStart_toEndOf="@+id/save"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+            app:layout_constraintVertical_bias="0.443" />
+
+        <Button
             android:id="@+id/save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,13 +66,13 @@
             android:text="Save"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.944"
+            app:layout_constraintHorizontal_bias="0.087"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
-            app:layout_constraintVertical_bias="0.193" />
+            app:layout_constraintVertical_bias="0.443" />
 
         <EditText
-            android:id="@+id/editText7"
+            android:id="@+id/mood_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -168,40 +186,44 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/genreOne"
+                    style="@android:style/Widget.DeviceDefault.ImageButton"
                     android:layout_width="135dp"
                     android:layout_height="135dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="false"
+                    android:clickable="true"
                     android:cropToPadding="false"
-                    app:srcCompat="@drawable/heavy_metal"
-                    tools:layout_editor_absoluteX="38dp"
-                    tools:layout_editor_absoluteY="459dp" />
+                    app:srcCompat="@drawable/heavy_metal" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/genreTwo"
                     android:layout_width="135dp"
                     android:layout_height="135dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:cropToPadding="false"
+                    app:srcCompat="@drawable/pop" />
 
-                    app:srcCompat="@drawable/pop"
-                    tools:layout_editor_absoluteX="193dp"
-                    tools:layout_editor_absoluteY="459dp" />
-
-                <ImageView
+                <ImageButton
                     android:id="@+id/genreThree"
                     android:layout_width="135dp"
                     android:layout_height="135dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight="1"
+                    android:clickable="true"
                     app:srcCompat="@drawable/indie" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/genreFour"
                     android:layout_width="135dp"
                     android:layout_height="135dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight="1"
+                    android:clickable="true"
+                    android:cropToPadding="false"
                     app:srcCompat="@drawable/classical" />
 
             </LinearLayout>
@@ -260,6 +282,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6"
             app:layout_constraintVertical_bias="0.0" />
+
     </android.support.constraint.ConstraintLayout>
 
 
