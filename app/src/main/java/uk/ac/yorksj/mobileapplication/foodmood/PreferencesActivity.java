@@ -10,7 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.gson.Gson;
 import java.util.ArrayList;
 
@@ -18,6 +21,7 @@ import java.util.ArrayList;
 public class PreferencesActivity extends AppCompatActivity {
 
     String moodName;
+    String moodGenre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +31,12 @@ public class PreferencesActivity extends AppCompatActivity {
         /* set so onTouch of the colour wheel image it will get the pixel*/
 
       //  Button colour = (Button)findViewById(R.id.chooseColour);
-        ArrayList<ImageView> genres = createList();
-        Mood temp;
         TextView mood_name = findViewById(R.id.mood_name);
         int redValue = 255;
         int greenValue = 255;
         int blueValue = 255;
-       // String genre = genreSelector();
 
-        Button save = (Button)findViewById(R.id.save);
+        Button save = findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,7 +48,7 @@ public class PreferencesActivity extends AppCompatActivity {
                 int blueValue = 255;
                 String genre = "Pop";
 
-                Mood mood = new Mood(name, redValue, greenValue, blueValue, genre);
+                Mood mood = new Mood(name, redValue, greenValue, blueValue, genreSelector(view));
                 Gson gson = new Gson();
                 String userMoodToJsonString = gson.toJson(mood);
                 /*here use gson to convert java class to json string to retrieve
@@ -73,6 +74,8 @@ public class PreferencesActivity extends AppCompatActivity {
                 Gson gson = new Gson();
                 Mood userMadeMood = gson.fromJson(mood, Mood.class);
                 moodName = userMadeMood.returnName();
+                moodGenre = userMadeMood.returnGenre();
+
                 System.out.println(moodName);
             }
         });
@@ -82,7 +85,7 @@ public class PreferencesActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, moodName, Snackbar.LENGTH_LONG)
+                Snackbar.make(view, moodGenre, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
             }
@@ -91,36 +94,21 @@ public class PreferencesActivity extends AppCompatActivity {
 
     }
 
-    public String genreSelector(ImageButton genreImage){
-        String genreOne = "Metal";
-        String genreTwo = "Pop";
-        String genreThree = "Indie";
-        String genreFour = "Classical";
-
-        if(genreImage == genreImage.findViewById(R.id.genreOne)){
-            return genreOne;
-        }else if(genreImage == genreImage.findViewById(R.id.genreTwo)) {
-            return genreTwo;
-        }else if(genreImage == genreImage.findViewById(R.id.genreThree)) {
-            return genreThree;
-        }else if(genreImage == genreImage.findViewById(R.id.genreFour)) {
-            return genreFour;
+    public String genreSelector(View view){
+        RadioGroup genreRadioGroup = findViewById(R.id.genreRadioGroup);
+        switch (genreRadioGroup.getCheckedRadioButtonId()){
+            case R.id.radio_heavy_metal:
+                Toast.makeText(this,"Heavy Metal", Toast.LENGTH_SHORT).show();
+                return "Heavy Metal";
+            case R.id.radio_pop:
+                return "Pop";
+            case R.id.radio_indie:
+                return "Indie";
+            case R.id.radio_classical:
+                return "Classical";
         }
-
-
-            return "text";
+        return "No genre selected";
     }
-    public ArrayList<ImageView> createList(){
-        ArrayList<ImageView> genreList = new ArrayList<ImageView>();
-        ImageView genreOne = findViewById(R.id.genreOne);
-        ImageView genreTwo = findViewById(R.id.genreTwo);
-        ImageView genreThree = findViewById(R.id.genreThree);
-        ImageView genreFour = findViewById(R.id.genreFour);
-        genreList.add(genreOne);
-        genreList.add(genreTwo);
-        genreList.add(genreThree);
-        genreList.add(genreFour);
-        return genreList;
-    }
+
 
 }

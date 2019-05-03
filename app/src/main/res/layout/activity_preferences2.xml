@@ -186,45 +186,47 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/genreOne"
-                    style="@android:style/Widget.DeviceDefault.ImageButton"
-                    android:layout_width="135dp"
-                    android:layout_height="135dp"
+                <RadioGroup
+                    android:id="@+id/genreRadioGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:adjustViewBounds="false"
-                    android:clickable="true"
-                    android:cropToPadding="false"
-                    app:srcCompat="@drawable/heavy_metal" />
+                    android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/genreTwo"
-                    android:layout_width="135dp"
-                    android:layout_height="135dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:cropToPadding="false"
-                    app:srcCompat="@drawable/pop" />
+                    <RadioButton
+                        android:id="@+id/radio_heavy_metal"
+                        android:layout_width="165dp"
+                        android:layout_height="165dp"
+                        android:layout_weight="1"
+                        android:button="@drawable/heavy_metal"
+                        android:checked="true"
+                        android:onClick="genreSelector" />
 
-                <ImageButton
-                    android:id="@+id/genreThree"
-                    android:layout_width="135dp"
-                    android:layout_height="135dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    app:srcCompat="@drawable/indie" />
 
-                <ImageButton
-                    android:id="@+id/genreFour"
-                    android:layout_width="135dp"
-                    android:layout_height="135dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:cropToPadding="false"
-                    app:srcCompat="@drawable/classical" />
+                    <RadioButton
+                        android:id="@+id/radio_pop"
+                        android:layout_width="165dp"
+                        android:layout_height="165dp"
+                        android:layout_weight="1"
+                        android:button="@drawable/pop"
+                        android:onClick="genreSelector" />
+
+                    <RadioButton
+                        android:id="@+id/radio_indie"
+                        android:layout_width="165dp"
+                        android:layout_height="165dp"
+                        android:layout_weight="1"
+                        android:button="@drawable/indie"
+                        android:onClick="genreSelector" />
+
+                    <RadioButton
+                        android:id="@+id/radio_classical"
+                        android:layout_width="165dp"
+                        android:layout_height="165dp"
+                        android:layout_weight="1"
+                        android:button="@drawable/classical"
+                        android:onClick="genreSelector" />
+                </RadioGroup>
 
             </LinearLayout>
         </HorizontalScrollView>
@@ -285,10 +287,6 @@
 
     </android.support.constraint.ConstraintLayout>
 
-
-    <include
-        android:id="@+id/include"
-        layout="@layout/content_preferences" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

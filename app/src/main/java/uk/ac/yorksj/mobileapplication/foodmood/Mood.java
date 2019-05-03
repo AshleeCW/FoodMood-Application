@@ -38,6 +38,10 @@ public class Mood {
     public String returnName() {
         return this.name;
     }
+    public String returnGenre(){
+        return this.genre;
+    }
+
 
     public Mood returnMood(){
         return this;
