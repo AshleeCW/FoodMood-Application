@@ -2,26 +2,27 @@ package uk.ac.yorksj.mobileapplication.foodmood;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.gson.Gson;
-import java.util.ArrayList;
 
 
 public class PreferencesActivity extends AppCompatActivity {
 
     String moodName;
     String moodGenre;
+    int redValue = 255;
+    int greenValue = 255;
+    int blueValue = 255;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +33,73 @@ public class PreferencesActivity extends AppCompatActivity {
 
       //  Button colour = (Button)findViewById(R.id.chooseColour);
         TextView mood_name = findViewById(R.id.mood_name);
-        int redValue = 255;
-        int greenValue = 255;
-        int blueValue = 255;
+
+        SeekBar seekBarRed = findViewById(R.id.seekBarRed);
+        SeekBar seekBarGreen = findViewById(R.id.seekBarGreen);
+        SeekBar seekBarBlue = findViewById(R.id.seekBarBlue);
+
+
+        seekBarRed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+            int progressChangedValue = 0;
+
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                redValue = progress;
+            }
+
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                View colorPreview = findViewById(R.id.colorPreview);
+                colorPreview.setBackgroundColor(Color.rgb(redValue, greenValue, blueValue));
+
+                Toast.makeText(PreferencesActivity.this, "Seek bar progress is :" + redValue,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+        seekBarGreen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+            int progressChangedValue = 0;
+
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                greenValue = progress;
+            }
+
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                View colorPreview = findViewById(R.id.colorPreview);
+                colorPreview.setBackgroundColor(Color.rgb(redValue, greenValue, blueValue));
+
+                Toast.makeText(PreferencesActivity.this, "Seek bar progress is :" + greenValue,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+        seekBarBlue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+            int progressChangedValue = 0;
+
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                blueValue = progress;
+            }
+
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                View colorPreview = findViewById(R.id.colorPreview);
+                colorPreview.setBackgroundColor(Color.rgb(redValue, greenValue, blueValue));
+
+                Toast.makeText(PreferencesActivity.this, "Seek bar progress is :" + blueValue,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
 
         Button save = findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
@@ -43,10 +108,7 @@ public class PreferencesActivity extends AppCompatActivity {
 
                 TextView mood_name = findViewById(R.id.mood_name);
                 String name = mood_name.getText().toString();
-                int redValue = 255;
-                int greenValue = 255;
-                int blueValue = 255;
-                String genre = "Pop";
+
 
                 Mood mood = new Mood(name, redValue, greenValue, blueValue, genreSelector(view));
                 Gson gson = new Gson();
