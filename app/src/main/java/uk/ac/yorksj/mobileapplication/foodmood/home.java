@@ -3,13 +3,11 @@ package uk.ac.yorksj.mobileapplication.foodmood;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class home extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        //Test - AshleeCW please
+        setContentView(R.layout.activity_home);
     }
 }
