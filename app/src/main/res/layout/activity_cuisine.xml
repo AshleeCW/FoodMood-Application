@@ -64,7 +64,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.881"
-                app:srcCompat="@drawable/franceflagimage" />
+                app:srcCompat="@drawable/france_flag_image" />
 
             <ImageView
                 android:id="@+id/americanflag"
@@ -80,7 +80,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.194"
-                app:srcCompat="@drawable/americaflagimage" />
+                app:srcCompat="@drawable/america_flag_image" />
 
         </LinearLayout>
 
@@ -131,7 +131,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.194"
-                app:srcCompat="@drawable/italyflagimage" />
+                app:srcCompat="@drawable/italy_flag_image" />
 
             <ImageView
                 android:id="@+id/indianflag"
@@ -146,7 +146,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.881"
-                app:srcCompat="@drawable/indiaflagimage" />
+                app:srcCompat="@drawable/india_flag_image" />
 
         </LinearLayout>
 
@@ -197,7 +197,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.533"
-                app:srcCompat="@drawable/ukflagimage" />
+                app:srcCompat="@drawable/uk_flag_image" />
 
             <ImageView
                 android:id="@+id/chinaFlag"
@@ -212,7 +212,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.533"
-                app:srcCompat="@drawable/chinaflagimage" />
+                app:srcCompat="@drawable/china_flag_image" />
 
         </LinearLayout>
 
