@@ -19,6 +19,7 @@ public class Cuisine extends AppCompatActivity {
         setContentView(R.layout.activity_cuisine);
 
         WebView fWebView = findViewById(R.id.french_anthem);
+        //these strings are the embed codes of YouTube videos
         String fVideoID = "4K1q9Ntcr5g";
         WebView aWebview = findViewById(R.id.american_anthem);
         String aVideoID = "M1wLtAXDgqg";
@@ -40,7 +41,7 @@ public class Cuisine extends AppCompatActivity {
     }
 
     public void nationalAnthem(WebView webview, String videoID){
-        webview.getSettings().setJavaScriptEnabled(true);
+        webview.getSettings().setJavaScriptEnabled(true);   //have tried without JS but doesn't work
         webview.getSettings().setPluginState(WebSettings.PluginState.ON);
         webview.loadUrl("https://www.youtube.com/embed/" + videoID);
         webview.setWebChromeClient(new WebChromeClient());
