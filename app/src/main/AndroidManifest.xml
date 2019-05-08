@@ -18,7 +18,7 @@
 
         </activity>
         <activity
-            android:name=".preferences"
+            android:name=".PreferencesActivity"
             android:exported="true">
 
         </activity>
@@ -32,11 +32,12 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
+        <!--<activity android:name=".PreferencesActivity"/>-->
 
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".MainActivity">
+        <!--<activity android:name=".SignupActivity" />-->
+        <!--<activity android:name=".MainActivity">-->
 
-        </activity>
+        <!--</activity>-->
     </application>
 
 </manifest>
