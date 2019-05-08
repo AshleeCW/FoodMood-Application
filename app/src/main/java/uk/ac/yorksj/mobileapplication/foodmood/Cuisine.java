@@ -6,6 +6,9 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.Toast;
 
 public class Cuisine extends AppCompatActivity {
@@ -15,58 +18,19 @@ public class Cuisine extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuisine);
 
+        WebView fWebView = findViewById(R.id.french_anthem);
+        String fVideoID = "4K1q9Ntcr5g";
+        WebView aWebview = findViewById(R.id.american_anthem);
+        String aVideoID = "M1wLtAXDgqg";
+
+        nationalAnthem(fWebView, fVideoID);
+        nationalAnthem(aWebview, aVideoID);
 
 
 
 
 
-
-
-
-
-       /* public void displayToast() {
-            Toast.makeText(getApplicationContext(), message,
-                    Toast.LENGTH_SHORT).show();
-        }
-        public void showUSA(View view) {
-            displayToast(getString(R.string.title_activity_cuisineUSA));
-        }*/
-
-
-
-
-
-
-
-/*
-        imageView usa = findViewById(R.id.americanflag);
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-
-
-
-
-
-
-
-            }
-        }); */
-
-
-
-       // Toolbar toolbar = findViewById(R.id.toolbar);
-      //  setSupportActionBar(toolbar);
-
-//        FloatingActionButton fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-            }
+    }
 
     public void toastMsg(String msg) {
 
@@ -74,15 +38,23 @@ public class Cuisine extends AppCompatActivity {
         toast.show();
 
     }
+
+    public void nationalAnthem(WebView webview, String videoID){
+        webview.getSettings().setJavaScriptEnabled(true);
+        webview.getSettings().setPluginState(WebSettings.PluginState.ON);
+        webview.loadUrl("https://www.youtube.com/embed/" + videoID);
+        webview.setWebChromeClient(new WebChromeClient());
+    }
     public void displayToastMsg(android.view.View v) {
 
-        if(v == findViewById(R.id.americanflag)) {
-            toastMsg("Hello how are you today!!");
-        }
-        else if(v ==findViewById(R.id.frenchflag)){
-          toastMsg("Poopy butthole");
-        }
-        else if(v ==findViewById(R.id.chinaFlag)){
+//        if(v == findViewById(R.id.americanflag)) {
+//            toastMsg("Hello how are you today!!");
+//        }
+//        if(v ==findViewById(R.id.frenchflag)){
+//          toastMsg("Poopy butthole");
+//        }
+//        else
+            if(v ==findViewById(R.id.chinaFlag)){
             toastMsg("Coward");
         }
         else if(v ==findViewById(R.id.italyflag)){
