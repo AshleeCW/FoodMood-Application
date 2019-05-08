@@ -15,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.google.gson.Gson;
 
-
 public class PreferencesActivity extends AppCompatActivity {
 
     String moodName;
@@ -29,18 +28,11 @@ public class PreferencesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferences2);
 
-        /* set so onTouch of the colour wheel image it will get the pixel*/
-
-      //  Button colour = (Button)findViewById(R.id.chooseColour);
-        TextView mood_name = findViewById(R.id.mood_name);
-
         SeekBar seekBarRed = findViewById(R.id.seekBarRed);
         SeekBar seekBarGreen = findViewById(R.id.seekBarGreen);
         SeekBar seekBarBlue = findViewById(R.id.seekBarBlue);
 
-
         seekBarRed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
-            int progressChangedValue = 0;
             View colorPreview = findViewById(R.id.colorPreview);
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -59,7 +51,6 @@ public class PreferencesActivity extends AppCompatActivity {
             }
         });
         seekBarGreen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
-            int progressChangedValue = 0;
             View colorPreview = findViewById(R.id.colorPreview);
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -78,7 +69,6 @@ public class PreferencesActivity extends AppCompatActivity {
             }
         });
         seekBarBlue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
-            int progressChangedValue = 0;
             View colorPreview = findViewById(R.id.colorPreview);
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -97,10 +87,6 @@ public class PreferencesActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
         Button save = findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,7 +94,6 @@ public class PreferencesActivity extends AppCompatActivity {
 
                 TextView mood_name = findViewById(R.id.mood_name);
                 String name = mood_name.getText().toString();
-
 
                 Mood mood = new Mood(name, redValue, greenValue, blueValue, genreSelector(view));
                 Gson gson = new Gson();
@@ -121,7 +106,8 @@ public class PreferencesActivity extends AppCompatActivity {
                 editor.putString("mood", userMoodToJsonString); //no errors dabbing here
 
                 //TODO add other files to mood || add the complete mood rather than each line
-                editor.commit();
+                editor.apply();
+                //if this causes issues change back to editor.commit() , Android Studio recommended .apply()
             }
         });
 
@@ -136,8 +122,6 @@ public class PreferencesActivity extends AppCompatActivity {
                 Mood userMadeMood = gson.fromJson(mood, Mood.class);
                 moodName = userMadeMood.returnName();
                 moodGenre = userMadeMood.returnGenre();
-
-                System.out.println(moodName);
             }
         });
 
@@ -147,7 +131,6 @@ public class PreferencesActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, moodGenre, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-
             }
         });
     }

@@ -1,12 +1,9 @@
 package uk.ac.yorksj.mobileapplication.foodmood;
 
-import android.content.Context;
 import android.graphics.Color;
 
-import java.io.FileOutputStream;
-/*Create a mood for the user preferences*/
+/*Create a mood for the user preferences which can be loaded through the Moods section of the app*/
 public class Mood {
-
 
     private String name;
     private Color color;
@@ -14,7 +11,6 @@ public class Mood {
 
 //    Mood mood = new Mood(name, red, green, blue, genre);
     //TODO try below with the above mood too. May not need the overloaded method
-    String moodString = this.toString();
     /*Convert the mood to a String so it can be converted to bytes and saved in output stream*/
 
     /*Overload the method to allow the single class to be converted to string*/
@@ -37,9 +33,6 @@ public class Mood {
     public String returnGenre(){
         return this.genre;
     }
-
-
-
 
     public Mood returnMood(){
         return this;
