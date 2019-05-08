@@ -41,8 +41,11 @@ public class PreferencesActivity extends AppCompatActivity {
 
         seekBarRed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
             int progressChangedValue = 0;
+            View colorPreview = findViewById(R.id.colorPreview);
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                colorPreview.setBackgroundColor(Color.rgb(redValue, greenValue, blueValue));
+
                 redValue = progress;
             }
 
@@ -51,17 +54,17 @@ public class PreferencesActivity extends AppCompatActivity {
             }
 
             public void onStopTrackingTouch(SeekBar seekBar) {
-                View colorPreview = findViewById(R.id.colorPreview);
                 colorPreview.setBackgroundColor(Color.rgb(redValue, greenValue, blueValue));
 
-                Toast.makeText(PreferencesActivity.this, "Seek bar progress is :" + redValue,
-                        Toast.LENGTH_SHORT).show();
             }
         });
         seekBarGreen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
             int progressChangedValue = 0;
+            View colorPreview = findViewById(R.id.colorPreview);
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                colorPreview.setBackgroundColor(Color.rgb(redValue, greenValue, blueValue));
+
                 greenValue = progress;
             }
 
@@ -70,17 +73,17 @@ public class PreferencesActivity extends AppCompatActivity {
             }
 
             public void onStopTrackingTouch(SeekBar seekBar) {
-                View colorPreview = findViewById(R.id.colorPreview);
                 colorPreview.setBackgroundColor(Color.rgb(redValue, greenValue, blueValue));
 
-                Toast.makeText(PreferencesActivity.this, "Seek bar progress is :" + greenValue,
-                        Toast.LENGTH_SHORT).show();
             }
         });
         seekBarBlue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
             int progressChangedValue = 0;
+            View colorPreview = findViewById(R.id.colorPreview);
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                colorPreview.setBackgroundColor(Color.rgb(redValue, greenValue, blueValue));
+
                 blueValue = progress;
             }
 
@@ -89,11 +92,8 @@ public class PreferencesActivity extends AppCompatActivity {
             }
 
             public void onStopTrackingTouch(SeekBar seekBar) {
-                View colorPreview = findViewById(R.id.colorPreview);
                 colorPreview.setBackgroundColor(Color.rgb(redValue, greenValue, blueValue));
 
-                Toast.makeText(PreferencesActivity.this, "Seek bar progress is :" + blueValue,
-                        Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -126,7 +126,6 @@ public class PreferencesActivity extends AppCompatActivity {
         });
 
         Button load = findViewById(R.id.load);
-
         load.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -142,7 +141,6 @@ public class PreferencesActivity extends AppCompatActivity {
             }
         });
 
-
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,8 +150,6 @@ public class PreferencesActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 
     public String genreSelector(View view){
@@ -171,6 +167,5 @@ public class PreferencesActivity extends AppCompatActivity {
         }
         return "No genre selected";
     }
-
 
 }
