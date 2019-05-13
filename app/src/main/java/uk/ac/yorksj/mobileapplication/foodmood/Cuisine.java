@@ -18,11 +18,15 @@ public class Cuisine extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuisine);
 
+        LoadURLs loadYou = new LoadURLs();
         WebView fWebView = findViewById(R.id.french_anthem);
         //these strings are the embed codes of YouTube videos
         String fVideoID = "4K1q9Ntcr5g";
         WebView aWebview = findViewById(R.id.american_anthem);
         String aVideoID = "M1wLtAXDgqg";
+
+        loadYou.execute(fVideoID);
+
 
         nationalAnthem(fWebView, fVideoID);
         nationalAnthem(aWebview, aVideoID);

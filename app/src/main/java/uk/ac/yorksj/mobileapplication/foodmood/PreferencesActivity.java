@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
+
 
 public class PreferencesActivity extends AppCompatActivity {
 
@@ -23,6 +25,8 @@ public class PreferencesActivity extends AppCompatActivity {
     int redValue = 255;
     int greenValue = 255;
     int blueValue = 255;
+    ArrayList<Mood> history = new ArrayList<>(); //Used for creating list of moods for history page
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +44,6 @@ public class PreferencesActivity extends AppCompatActivity {
 
 
         seekBarRed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
-            int progressChangedValue = 0;
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 redValue = progress;
@@ -59,7 +62,6 @@ public class PreferencesActivity extends AppCompatActivity {
             }
         });
         seekBarGreen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
-            int progressChangedValue = 0;
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 greenValue = progress;
@@ -78,7 +80,6 @@ public class PreferencesActivity extends AppCompatActivity {
             }
         });
         seekBarBlue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
-            int progressChangedValue = 0;
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 blueValue = progress;
@@ -102,26 +103,32 @@ public class PreferencesActivity extends AppCompatActivity {
 
 
         Button save = findViewById(R.id.save);
+
+
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
 
                 TextView mood_name = findViewById(R.id.mood_name);
                 String name = mood_name.getText().toString();
 
 
                 Mood mood = new Mood(name, redValue, greenValue, blueValue, genreSelector(view));
+                history.add(mood);
                 Gson gson = new Gson();
                 String userMoodToJsonString = gson.toJson(mood);
+                String moodHistoryListToString = gson.toJson(history); //use this in the shsredprefs
                 /*here use gson to convert java class to json string to retrieve
                 the object back again *dabs*/
 
                 SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putString("mood", userMoodToJsonString); //no errors dabbing here
+                editor.putString("history", moodHistoryListToString);
 
                 //TODO add other files to mood || add the complete mood rather than each line
-                editor.commit();
+                editor.apply();//change to commit if error here
             }
         });
 
@@ -170,6 +177,11 @@ public class PreferencesActivity extends AppCompatActivity {
                 return "Classical";
         }
         return "No genre selected";
+    }
+
+    public ArrayList<Mood> makeHistory(ArrayList<Mood> moods, Mood additionalMood){
+        moods.add(additionalMood);
+        return moods;
     }
 
 
