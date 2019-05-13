@@ -1,10 +1,10 @@
 package uk.ac.yorksj.mobileapplication.foodmood;
 
-import android.content.Context;
+
 import android.graphics.Color;
 
 import java.io.FileOutputStream;
-/*Create a mood for the user preferences*/
+
 public class Mood {
 
 
@@ -37,9 +37,6 @@ public class Mood {
     public String returnGenre(){
         return this.genre;
     }
-
-
-
 
     public Mood returnMood(){
         return this;
