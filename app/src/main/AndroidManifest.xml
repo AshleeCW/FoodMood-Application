@@ -15,6 +15,7 @@
         android:theme="@style/AppTheme">
 
 
+
         <activity android:name=".MoodsActivity"></activity>
         <activity android:name=".home">
             <intent-filter>
@@ -26,16 +27,10 @@
         <activity android:name=".SignupActivity" />
         <activity android:name=".MainActivity">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
 
         <activity android:name=".Cuisine" />
-        <activity android:name=".PreferencesActivity" />
+        <activity android:name=".PreferencesActivity"/>
     </application>
 
 </manifest>
