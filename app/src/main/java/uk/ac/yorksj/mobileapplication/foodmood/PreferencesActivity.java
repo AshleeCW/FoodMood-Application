@@ -47,7 +47,7 @@ public class PreferencesActivity extends AppCompatActivity {
 
             public void onStopTrackingTouch(SeekBar seekBar) {
                 colorPreview.setBackgroundColor(Color.rgb(redValue, greenValue, blueValue));
-
+                //changes
             }
         });
         seekBarGreen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
