@@ -21,66 +21,42 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/frenchText"
-                android:layout_width="131dp"
-                android:layout_height="50dp"
-                android:layout_marginRight="60dp"
-                android:ems="10"
-                android:inputType="textPersonName"
+            <TextView
+                android:id="@+id/france_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="135dp"
+                android:layout_weight="1"
                 android:text="France"
-                android:visibility="visible"
-                tools:layout_editor_absoluteX="41dp"
-                tools:layout_editor_absoluteY="455dp" />
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
 
-            <EditText
-                android:id="@+id/usaText"
-                android:layout_width="131dp"
-                android:layout_height="50dp"
-                android:ems="10"
-                android:inputType="textPersonName"
+            <TextView
+                android:id="@+id/usa_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="U.S.A"
-                android:visibility="visible"
-                tools:layout_editor_absoluteX="40dp"
-                tools:layout_editor_absoluteY="70dp" />
+                android:textColor="@android:color/background_dark"
+                android:textSize="18sp" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="142dp"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/frenchflag"
-                android:layout_width="132dp"
-                android:layout_height="140dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:onClick="displayToastMsg"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.121"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.881"
-                app:srcCompat="@drawable/franceflagimage" />
+            <WebView
+                android:id="@+id/french_anthem"
+                android:layout_width="159dp"
+                android:layout_height="match_parent" />
 
-            <ImageView
-                android:id="@+id/americanflag"
-                android:layout_width="132dp"
-                android:layout_height="140dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:contentDescription="america flag"
-                android:onClick="displayToastMsg"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.121"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.194"
-                app:srcCompat="@drawable/americaFlagImage" />
+            <WebView
+                android:id="@+id/american_anthem"
+                android:layout_width="169dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp" />
 
         </LinearLayout>
 
@@ -131,7 +107,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.194"
-                app:srcCompat="@drawable/italyFlagImage" />
+                app:srcCompat="@drawable/italy_flag_image" />
 
             <ImageView
                 android:id="@+id/indianflag"
@@ -146,7 +122,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.881"
-                app:srcCompat="@drawable/indiaFlagImage" />
+                app:srcCompat="@drawable/india_flag_image" />
 
         </LinearLayout>
 
@@ -197,7 +173,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.533"
-                app:srcCompat="@drawable/ukFlagImage" />
+                app:srcCompat="@drawable/uk_flag_image" />
 
             <ImageView
                 android:id="@+id/chinaFlag"
@@ -212,7 +188,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.533"
-                app:srcCompat="@drawable/chinaFlagImage" />
+                app:srcCompat="@drawable/china_flag_image" />
 
         </LinearLayout>
 
