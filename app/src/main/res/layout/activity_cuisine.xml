@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E1F0F9"
+    tools:context=".Cuisine">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/frenchText"
+                android:layout_width="131dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="60dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="France"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="41dp"
+                tools:layout_editor_absoluteY="455dp" />
+
+            <EditText
+                android:id="@+id/usaText"
+                android:layout_width="131dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="U.S.A"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="40dp"
+                tools:layout_editor_absoluteY="70dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="142dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/frenchflag"
+                android:layout_width="132dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:onClick="displayToastMsg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.121"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.881"
+                app:srcCompat="@drawable/franceflagimage" />
+
+            <ImageView
+                android:id="@+id/americanflag"
+                android:layout_width="132dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="america flag"
+                android:onClick="displayToastMsg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.121"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.194"
+                app:srcCompat="@drawable/americaFlagImage" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="57dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/italyText"
+                android:layout_width="133.5dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="60dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Italy"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="227dp"
+                tools:layout_editor_absoluteY="70dp" />
+
+            <EditText
+                android:id="@+id/indianText"
+                android:layout_width="131dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="India"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="226dp"
+                tools:layout_editor_absoluteY="455dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/italyflag"
+                android:layout_width="132dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:onClick="displayToastMsg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.828"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.194"
+                app:srcCompat="@drawable/italyFlagImage" />
+
+            <ImageView
+                android:id="@+id/indianflag"
+                android:layout_width="132dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:onClick="displayToastMsg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.828"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.881"
+                app:srcCompat="@drawable/indiaFlagImage" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/britishText"
+                android:layout_width="131dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="60dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Britian"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="227dp"
+                tools:layout_editor_absoluteY="260dp" />
+
+            <EditText
+                android:id="@+id/chinaText"
+                android:layout_width="131dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="China"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="40dp"
+                tools:layout_editor_absoluteY="260dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/britishflag"
+                android:layout_width="132dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:onClick="displayToastMsg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.828"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.533"
+                app:srcCompat="@drawable/ukFlagImage" />
+
+            <ImageView
+                android:id="@+id/chinaFlag"
+                android:layout_width="132dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:onClick="displayToastMsg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.121"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.533"
+                app:srcCompat="@drawable/chinaFlagImage" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
