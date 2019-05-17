@@ -35,8 +35,8 @@ public class MoodsActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.moodlistView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        RecycleViewAdapter adapter = new RecycleViewAdapter(this, historyList);
-        recyclerView.setAdapter(adapter);
+//        RecycleViewAdapter adapter = new RecycleViewAdapter(this, historyList);
+//        recyclerView.setAdapter(adapter);
 
 
         View v = findViewById(buttonId);
