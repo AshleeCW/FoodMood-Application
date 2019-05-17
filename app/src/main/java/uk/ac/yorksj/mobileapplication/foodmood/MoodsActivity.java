@@ -8,10 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-
 import com.google.gson.Gson;
-
 import java.util.ArrayList;
 
 
@@ -28,10 +25,14 @@ public class MoodsActivity extends AppCompatActivity {
         String history = prefs.getString("history", "DEFAULT");
 
         Gson gson = new Gson();
-        ArrayList<Mood> historyList = gson.fromJson(history, ArrayList.class);
+        try {
+            ArrayList<Mood> historyList = gson.fromJson(history, ArrayList.class);
+        } catch (Exception e){
+            System.out.print("Couldn't load any moods");
+        }
 
        // RecyclerView recycle = findViewById(R.id.moodList);
-        for (int i = 0; i < historyList.size(); i++) {
+  //      for (int i = 0; i < historyList.size(); i++) {
             //   recycle.addView(new TextView(historyList.get(i).getName()));
 //        for (int i = 0; i < historyList.size(); i++) {
 //
@@ -56,5 +57,5 @@ public class MoodsActivity extends AppCompatActivity {
             });
         }
     }
-}
+
 
