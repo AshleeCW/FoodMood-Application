@@ -27,21 +27,14 @@ public class MoodsActivity extends AppCompatActivity {
         Gson gson = new Gson();
         try {
             ArrayList<Mood> historyList = gson.fromJson(history, ArrayList.class);
-        } catch (Exception e){
-            System.out.print("Couldn't load any moods");
-        }
-
-       // RecyclerView recycle = findViewById(R.id.moodList);
-  //      for (int i = 0; i < historyList.size(); i++) {
-            //   recycle.addView(new TextView(historyList.get(i).getName()));
-//        for (int i = 0; i < historyList.size(); i++) {
-//
-//        }
 
             RecyclerView recyclerView = findViewById(R.id.moodlistView);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        RecycleViewAdapter adapter = new RecycleViewAdapter(this, historyList);
-//        recyclerView.setAdapter(adapter);
+            RecycleViewAdapter adapter = new RecycleViewAdapter(historyList, this);
+            recyclerView.setAdapter(adapter);
+        } catch (Exception e){
+            System.out.print("Couldn't load any moods");
+        }
 
 
             View v = findViewById(buttonId);
