@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
@@ -30,24 +30,31 @@ public class MoodsActivity extends AppCompatActivity {
         Gson gson = new Gson();
         ArrayList<Mood> historyList = gson.fromJson(history, ArrayList.class);
 
-        RecyclerView recycle = findViewById(R.id.moodList);
+       // RecyclerView recycle = findViewById(R.id.moodList);
         for (int i = 0; i < historyList.size(); i++) {
-         //   recycle.addView(new TextView(historyList.get(i).getName()));
+            //   recycle.addView(new TextView(historyList.get(i).getName()));
+//        for (int i = 0; i < historyList.size(); i++) {
+//
+//        }
 
+            RecyclerView recyclerView = findViewById(R.id.moodlistView);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        RecycleViewAdapter adapter = new RecycleViewAdapter(this, historyList);
+//        recyclerView.setAdapter(adapter);
+
+
+            View v = findViewById(buttonId);
+
+            Button preferenceButton = (Button) v;
+
+            preferenceButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent preferencesPage = new Intent(view.getContext(), PreferencesActivity.class);
+                    startActivity(preferencesPage);
+                }
+            });
         }
-
-
-        View v = findViewById(buttonId);
-
-        Button preferenceButton = (Button) v;
-
-        preferenceButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent preferencesPage = new Intent(view.getContext(), PreferencesActivity.class);
-                startActivity(preferencesPage);
-            }
-        });
     }
 }
 

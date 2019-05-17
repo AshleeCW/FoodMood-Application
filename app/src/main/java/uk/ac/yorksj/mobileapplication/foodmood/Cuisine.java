@@ -25,7 +25,6 @@ public class Cuisine extends AppCompatActivity {
         String aVideoID = "M1wLtAXDgqg";
 
 
-
         nationalAnthem(fWebView, fVideoID);
         nationalAnthem(aWebview, aVideoID);
 
