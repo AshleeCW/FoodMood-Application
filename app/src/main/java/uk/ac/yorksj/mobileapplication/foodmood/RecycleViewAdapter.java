@@ -13,9 +13,9 @@ import java.util.ArrayList;
 public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewHolder> {
 
     private LayoutInflater layoutInflater;
-    private ArrayList<String> mood;
+    private ArrayList<Mood> mood;
 
-    RecycleViewAdapter(ArrayList<String> moods, Context context) {
+    RecycleViewAdapter(ArrayList<Mood> moods, Context context) {
 
         this.layoutInflater = LayoutInflater.from(context);
         this.mood = moods;
@@ -34,9 +34,9 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull RecycleViewHolder recycleViewHolder, int position) {
 
-        String content = mood.get(position);
+        Mood content = mood.get(position);
 
-        recycleViewHolder.contentText.setText(content);
+        recycleViewHolder.contentText.setText((CharSequence) content);
     }
 
     @Override

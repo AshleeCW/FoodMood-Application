@@ -1,12 +1,16 @@
 package uk.ac.yorksj.mobileapplication.foodmood;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
@@ -26,6 +30,7 @@ public class PreferencesActivity extends AppCompatActivity {
     int greenValue = 100;
     int blueValue = 100;
     ArrayList<Mood> history = new ArrayList<>(); //Used for creating list of moods for history page
+
 
 
     @Override
@@ -162,6 +167,20 @@ public class PreferencesActivity extends AppCompatActivity {
                 Snackbar.make(view, moodGenre, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
+            }
+        });
+
+        //ToolBar code
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        toolbar.setNavigationIcon(R.drawable.baseline_home_black_18);
+
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),home.class));
             }
         });
 
