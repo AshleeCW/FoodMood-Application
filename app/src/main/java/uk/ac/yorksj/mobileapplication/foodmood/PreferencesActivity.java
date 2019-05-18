@@ -72,10 +72,7 @@ public class PreferencesActivity extends AppCompatActivity {
                 //changes
             }
         });
-        seekBarGreen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
-            View colorPreview = findViewById(R.id.colorPreview);
 
-        });
         seekBarGreen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -98,10 +95,6 @@ public class PreferencesActivity extends AppCompatActivity {
                 colorPreview.setBackgroundColor(Color.rgb(redValue, greenValue, blueValue));
 
             }
-        });
-        seekBarBlue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
-            View colorPreview = findViewById(R.id.colorPreview);
-
         });
         seekBarBlue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
 
