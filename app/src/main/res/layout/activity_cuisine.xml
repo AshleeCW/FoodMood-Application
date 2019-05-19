@@ -8,39 +8,19 @@
     tools:context=".Cuisine">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="351dp"
+        android:layout_height="586dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="0dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/france_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="135dp"
-                android:layout_weight="1"
-                android:text="France"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/usa_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="U.S.A"
-                android:textColor="@android:color/background_dark"
-                android:textSize="18sp" />
-
-        </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,44 +29,45 @@
 
             <WebView
                 android:id="@+id/french_anthem"
-                android:layout_width="159dp"
-                android:layout_height="match_parent" />
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp" />
 
             <WebView
                 android:id="@+id/american_anthem"
-                android:layout_width="169dp"
+                android:layout_width="150dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="30dp" />
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="57dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/italyText"
-                android:layout_width="133.5dp"
-                android:layout_height="50dp"
-                android:layout_marginRight="60dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Italy"
-                android:visibility="visible"
-                tools:layout_editor_absoluteX="227dp"
-                tools:layout_editor_absoluteY="70dp" />
+            <TextView
+                android:id="@+id/france_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="France"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
 
-            <EditText
-                android:id="@+id/indianText"
-                android:layout_width="131dp"
-                android:layout_height="50dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="India"
-                android:visibility="visible"
-                tools:layout_editor_absoluteX="226dp"
-                tools:layout_editor_absoluteY="455dp" />
+            <TextView
+                android:id="@+id/usa_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="U.S.A"
+                android:textColor="@android:color/background_dark"
+                android:textSize="18sp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -127,32 +108,31 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/britishText"
-                android:layout_width="131dp"
-                android:layout_height="50dp"
-                android:layout_marginRight="60dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Britian"
-                android:visibility="visible"
-                tools:layout_editor_absoluteX="227dp"
-                tools:layout_editor_absoluteY="260dp" />
 
-            <EditText
-                android:id="@+id/chinaText"
-                android:layout_width="131dp"
-                android:layout_height="50dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="China"
-                android:visibility="visible"
-                tools:layout_editor_absoluteX="40dp"
-                tools:layout_editor_absoluteY="260dp" />
+            <TextView
+                android:id="@+id/italyText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Italy"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/indianText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="India"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -190,6 +170,33 @@
                 app:layout_constraintVertical_bias="0.533"
                 app:srcCompat="@drawable/china_flag_image" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/britishText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Britain"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/chinaText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="China"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
         </LinearLayout>
 
     </LinearLayout>
