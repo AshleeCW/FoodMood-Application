@@ -1,5 +1,6 @@
 package uk.ac.yorksj.mobileapplication.foodmood;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class Cuisine extends AppCompatActivity {
@@ -22,19 +24,18 @@ public class Cuisine extends AppCompatActivity {
         WebView aWebview = findViewById(R.id.american_anthem);
         String aVideoID = "M1wLtAXDgqg";
         WebView bWebView = findViewById(R.id.british_anthem);
-        String bVideoID ="G9eK9fWUb3s";
+        String bVideoID = "G9eK9fWUb3s";
 
 
+        WebView cWebView = findViewById(R.id.chinese_anthem);
+        String cVideoID = "UctriMuXYS0";
+        WebView iWebView = findViewById(R.id.italian_anthem);
+        String iVideoID = "04ckV9QueXc";
+        WebView pWebView = findViewById(R.id.indian_anthem);
+        String pVideoID = "HtMF973tXIY";
 
- WebView cWebView = findViewById(R.id.chinese_anthem);
- String cVideoID ="UctriMuXYS0";
- WebView iWebView = findViewById(R.id.italian_anthem);
-  String iVideoID ="04ckV9QueXc";
-  WebView pWebView = findViewById(R.id.indian_anthem);
-  String pVideoID ="HtMF973tXIY";
 
-
-  //Webviews are different, lower and uppercase V, might be an issue later
+        //Webviews are different, lower and uppercase V, might be an issue later
 
         nationalAnthem(fWebView, fVideoID);
         nationalAnthem(aWebview, aVideoID);
@@ -45,11 +46,17 @@ public class Cuisine extends AppCompatActivity {
 
 
 
-
-
-
+        ImageView imageView1 = findViewById(R.id.cuisineHomeIcon);
+        imageView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent homePage = new Intent(view.getContext(), home.class);
+                startActivity(homePage);
+            }
+        });
 
     }
+
 
     public void toastMsg(String msg) {
 
@@ -58,12 +65,13 @@ public class Cuisine extends AppCompatActivity {
 
     }
 
-    public void nationalAnthem(WebView webview, String videoID){
+    public void nationalAnthem(WebView webview, String videoID) {
         webview.getSettings().setJavaScriptEnabled(true);   //have tried without JS but doesn't work
         webview.getSettings().setPluginState(WebSettings.PluginState.ON);
         webview.loadUrl("https://www.youtube.com/embed/" + videoID);
         webview.setWebChromeClient(new WebChromeClient());
     }
+
     public void displayToastMsg(android.view.View v) {
 
 ////      if(v == findViewById(R.id.americanflag)) {
@@ -87,7 +95,6 @@ public class Cuisine extends AppCompatActivity {
 //        }
 
     }
-  //      });
-    //}
+
 
 }

@@ -5,6 +5,7 @@
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context=".PreferencesActivity">
 
 
@@ -314,6 +315,19 @@
 
 
         </android.support.v7.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/preferencesHomeIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView4"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar"
+            app:layout_constraintStart_toStartOf="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/baseline_home_black_18" />
 
 
     </android.support.constraint.ConstraintLayout>

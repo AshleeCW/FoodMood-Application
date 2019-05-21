@@ -39,6 +39,15 @@ public class Camera extends AppCompatActivity {
 
             }
         });
+
+        ImageView imageView1 = findViewById(R.id.cameraHomeIcon);
+        imageView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent homePage = new Intent(view.getContext(), home.class);
+                startActivity(homePage);
+            }
+        });
     }
 
 
