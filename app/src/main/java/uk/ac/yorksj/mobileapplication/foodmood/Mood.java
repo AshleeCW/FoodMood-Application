@@ -42,4 +42,8 @@ public class Mood {
         return this;
     }
 
+    public String getName(){
+        return this.name;
+    }
+
 }
