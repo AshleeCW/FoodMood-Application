@@ -22,7 +22,7 @@ public class Cuisine extends AppCompatActivity {
         WebView aWebview = findViewById(R.id.american_anthem);
         String aVideoID = "M1wLtAXDgqg";
         WebView bWebView = findViewById(R.id.british_anthem);
-        String bVideoID ="G9eK9fWUb3s";
+        String bVideoID ="D3dR7u7TPNo"; //
 
 
 
@@ -31,7 +31,7 @@ public class Cuisine extends AppCompatActivity {
  WebView iWebView = findViewById(R.id.italian_anthem);
   String iVideoID ="04ckV9QueXc";
   WebView pWebView = findViewById(R.id.indian_anthem);
-  String pVideoID ="HtMF973tXIY";
+  String pVideoID ="8yMvU73Wr7Q";  //
 
 
   //Webviews are different, lower and uppercase V, might be an issue later
