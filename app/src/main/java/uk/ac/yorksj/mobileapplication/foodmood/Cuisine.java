@@ -22,7 +22,7 @@ public class Cuisine extends AppCompatActivity {
         WebView aWebview = findViewById(R.id.american_anthem);
         String aVideoID = "M1wLtAXDgqg";
         WebView bWebView = findViewById(R.id.british_anthem);
-        String bVideoID ="I8KSAtos-dk";
+        String bVideoID ="G9eK9fWUb3s";
 
 
 
