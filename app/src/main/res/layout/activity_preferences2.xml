@@ -85,6 +85,10 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.176"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
             app:layout_constraintHorizontal_bias="0.108"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -264,6 +268,7 @@
             android:layout_height="17dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginTop="96dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:max="255"
@@ -281,7 +286,7 @@
             android:layout_height="18dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
@@ -293,7 +298,7 @@
             app:layout_constraintHorizontal_bias="0.884"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/seekBarGreen"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.098" />
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -313,18 +318,24 @@
             app:layout_constraintTop_toTopOf="parent">
 
 
+
         </android.support.v7.widget.Toolbar>
 
-        <ImageView
-            android:id="@+id/preferencesHomeIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="8dp"
+        <ImageButton
+            android:id="@+id/homeBut"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
+            android:background="@android:color/transparent"
             app:layout_constraintBottom_toTopOf="@+id/textView4"
-            app:layout_constraintEnd_toEndOf="@+id/toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="@+id/toolbar"
-            app:layout_constraintTop_toTopOf="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/baseline_home_black_18" />
 
