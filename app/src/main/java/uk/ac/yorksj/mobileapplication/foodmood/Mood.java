@@ -7,8 +7,10 @@ import android.graphics.Color;
 public class Mood {
 
     private String name;
-    private Color color;
     private String genre;
+    private int red;
+    private int green;
+    private int blue;
 
 //    Mood mood = new Mood(name, red, green, blue, genre);
     //TODO try below with the above mood too. May not need the overloaded method
@@ -18,27 +20,29 @@ public class Mood {
     public Mood(String name, int red, int green, int blue, String genre) {
         this.name = name;
         this.genre = genre;
-        this.color.red(red);
-        this.color.green(green);
-        this.color.blue(blue);
+        this.red = red;
+        this.green = green;
+        this.blue = blue;
     }
 
-    public Mood(String name, Color color, String genre) {
-        this.name = name;
-        this.color = color;
-        this.genre = genre;
-    }
-
-    public String returnName() {
+    public String getName() {
         return this.name;
     }
 
-    public String returnGenre() {
+    public String getGenre() {
         return this.genre;
     }
 
-    public Mood returnMood() {
-        return this;
+    public int getRed() {
+        return red;
+    }
+
+    public int getGreen() {
+        return green;
+    }
+
+    public int getBlue() {
+        return blue;
     }
 
 }

@@ -10,10 +10,12 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -22,7 +24,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
-
+import java.util.prefs.Preferences;
 
 
 public class PreferencesActivity extends AppCompatActivity {
@@ -32,7 +34,6 @@ public class PreferencesActivity extends AppCompatActivity {
     int redValue = 100; //100 is the default progress on sliders
     int greenValue = 100;
     int blueValue = 100;
-    ArrayList<Mood> history = new ArrayList<>(); //Used for creating list of moods for history page
 
 
 
@@ -136,23 +137,31 @@ public class PreferencesActivity extends AppCompatActivity {
                 TextView mood_name = findViewById(R.id.mood_name);
                 String name = mood_name.getText().toString();
 
+                ArrayList<Mood> moods = MoodList.getFromPrefs(PreferencesActivity.this);
                 Mood mood = new Mood(name, redValue, greenValue, blueValue, genreSelector(view));
-                history.add(mood);
+                moods.add(mood);
                 Gson gson = new Gson();
-                String userMoodToJsonString = gson.toJson(mood);
-                String moodHistoryListToString = gson.toJson(history); //use this in the shsredprefs
+//                String userMoodToJsonString = gson.toJson(mood);
+                String moodHistoryListToString = gson.toJson(moods); //use this in the shsredprefs
                 /*here use gson to convert java class to json string to retrieve
                 the object back again *dabs*/
 
-                SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
+                SharedPreferences prefs = getSharedPreferences("prefs", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = prefs.edit();
-                editor.putString("mood", userMoodToJsonString); //no errors dabbing here
+     //           editor.putString("mood", userMoodToJsonString); //no errors dabbing here
                 editor.putString("history", moodHistoryListToString);
+                Log.e("history", "writing " + moodHistoryListToString);
+
+
+                Intent moodPage = new Intent(view.getContext(), MoodsActivity.class);
+                startActivity(moodPage);
+
+
 
                 //TODO add other files to mood || add the complete mood rather than each line
                 editor.apply();
                 //if this causes issues change back to editor.commit() , Android Studio recommended .apply()
-                editor.apply();//change to commit if error here
+                //editor.apply();//change to commit if error here
             }
         });
 
@@ -165,8 +174,8 @@ public class PreferencesActivity extends AppCompatActivity {
 
                 Gson gson = new Gson();
                 Mood userMadeMood = gson.fromJson(mood, Mood.class);
-                moodName = userMadeMood.returnName();
-                moodGenre = userMadeMood.returnGenre();
+                moodName = userMadeMood.getName();
+                moodGenre = userMadeMood.getGenre();
             }
         });
 
@@ -184,16 +193,21 @@ public class PreferencesActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
-        toolbar.setNavigationIcon(R.drawable.baseline_home_black_18);
 
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(getApplicationContext(),home.class));
+//            }
+//        });
+        ImageButton homeBut = findViewById(R.id.homeBut);
+        homeBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),home.class));
             }
         });
-
 
 
     }
