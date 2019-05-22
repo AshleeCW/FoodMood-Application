@@ -5,6 +5,7 @@
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context=".PreferencesActivity">
 
 
@@ -64,12 +65,12 @@
             android:background="@drawable/textview_border"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name"
             app:layout_constraintBottom_toTopOf="@+id/textView8"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintHorizontal_bias="0.543"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintVertical_bias="0.043" />
 
         <TextView
             android:id="@+id/textView6"
@@ -79,7 +80,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="288dp"
+            android:layout_marginBottom="292dp"
             android:text="Music"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -128,12 +129,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="36dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:text="Name your mood:"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.453"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -214,7 +214,7 @@
             android:layout_marginTop="64dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:text="Set up your first mood!"
+            android:text="Mood Setup"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.523"
@@ -303,7 +303,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/gradient"
             android:fitsSystemWindows="true"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
@@ -314,6 +314,19 @@
 
 
         </android.support.v7.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/preferencesHomeIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView4"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar"
+            app:layout_constraintStart_toStartOf="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/baseline_home_black_18" />
 
 
     </android.support.constraint.ConstraintLayout>

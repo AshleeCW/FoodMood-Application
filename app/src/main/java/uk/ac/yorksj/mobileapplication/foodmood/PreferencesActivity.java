@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -171,19 +172,15 @@ public class PreferencesActivity extends AppCompatActivity {
         });
 
         //ToolBar code
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
-        toolbar.setNavigationIcon(R.drawable.baseline_home_black_18);
 
-
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        ImageView imageView1 = findViewById(R.id.preferencesHomeIcon);
+        imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),home.class));
+            public void onClick(View view) {
+                Intent homePage = new Intent(view.getContext(), home.class);
+                startActivity(homePage);
             }
         });
-
 
     }
 
