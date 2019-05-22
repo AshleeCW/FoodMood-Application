@@ -42,12 +42,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062" />
+        app:layout_constraintVertical_bias="0.106" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/moodlistView"
-        android:layout_width="395dp"
-        android:layout_height="625dp"
+        android:layout_width="396dp"
+        android:layout_height="596dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="56dp"
