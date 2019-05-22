@@ -190,25 +190,15 @@ public class PreferencesActivity extends AppCompatActivity {
 
 
         //ToolBar code
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
 
-
-//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(getApplicationContext(),home.class));
-//            }
-//        });
-        ImageButton homeBut = findViewById(R.id.homeBut);
-        homeBut.setOnClickListener(new View.OnClickListener() {
+        ImageView imageView1 = findViewById(R.id.preferencesHomeIcon);
+        imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),home.class));
+            public void onClick(View view) {
+                Intent homePage = new Intent(view.getContext(), home.class);
+                startActivity(homePage);
             }
         });
-
 
     }
 

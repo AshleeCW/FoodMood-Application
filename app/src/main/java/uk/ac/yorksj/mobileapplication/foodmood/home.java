@@ -33,6 +33,16 @@ public class home extends AppCompatActivity {
             }
         });
 
+        ImageView imageView2 = findViewById(R.id.cameraView1);
+        imageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cuisinePage = new Intent(view.getContext(), Camera.class);
+                startActivity(cuisinePage);
+            }
+
+        });
+
     }
 
 }
