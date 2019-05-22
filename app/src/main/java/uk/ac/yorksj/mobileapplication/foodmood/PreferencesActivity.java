@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -191,8 +192,8 @@ public class PreferencesActivity extends AppCompatActivity {
 
         //ToolBar code
 
-        ImageView imageView1 = findViewById(R.id.preferencesHomeIcon);
-        imageView1.setOnClickListener(new View.OnClickListener() {
+        ImageView imageView = findViewById(R.id.homeBut);
+        imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent homePage = new Intent(view.getContext(), home.class);

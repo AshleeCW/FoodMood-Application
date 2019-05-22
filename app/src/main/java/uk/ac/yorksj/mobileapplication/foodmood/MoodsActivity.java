@@ -11,6 +11,8 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+
 import com.google.gson.Gson;
 import java.util.ArrayList;
 
@@ -30,8 +32,6 @@ public class MoodsActivity extends AppCompatActivity {
         rView.setAdapter(rAdapt);
         rView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-        int buttonId = R.id.preferencePage;
-
         ArrayList<Mood> moods = MoodList.getFromPrefs(this);
 
         for (int i = 0; i < moods.size(); i++) {
@@ -40,13 +40,21 @@ public class MoodsActivity extends AppCompatActivity {
         }
 
 
-        Button preferenceButton = findViewById(buttonId);
+        Button preferenceButton = findViewById(R.id.preferencePage);
 
         preferenceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent preferencesPage = new Intent(view.getContext(), PreferencesActivity.class);
                 startActivity(preferencesPage);
+            }
+        });
+        ImageButton homeButton = findViewById(R.id.homeBut);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent homePage = new Intent(view.getContext(), home.class);
+                startActivity(homePage);
             }
         });
 
