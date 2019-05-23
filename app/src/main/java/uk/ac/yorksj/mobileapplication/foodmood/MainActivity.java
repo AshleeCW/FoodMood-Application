@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         private String username;
         private String password;
         private ProgressDialog pDialog;
-        private String login_url = "cs2s.yorkdc.net/8888/api/member/login.php"; // edit to change cs2s url
+        private String login_url = "http://ysjcs.net/~david.benson/member/db/login.php"; // edit to change cs2s url
         private SessionHandler session;
         @Override
 
