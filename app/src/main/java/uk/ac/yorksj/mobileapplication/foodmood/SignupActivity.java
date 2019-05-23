@@ -35,7 +35,7 @@ public class SignupActivity extends AppCompatActivity {
     private String password;
     private String email;
     private ProgressDialog pDialog;
-    private String register_url = "http://ysjcs.net/~sam.holmes/member/db/register.php"; // need to enter url of CS2S server  "https://ysjcs.net/~sam.holmes/member/db/register.php"
+    private String register_url = "http://ysjcs.net/~sam.holmeserge/member/db/register.php"; // need to enter url of CS2S server  "https://ysjcs.net/~sam.holmes/member/db/register.php"
     private SessionHandler session;
 
     @Override

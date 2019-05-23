@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="10dp"
+    android:id="@+id/parent_layout" android:background="@drawable/border_shadow">
+
+    <View
+
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/recycle_preview_color"
+        android:background="@color/colorAccent"
+        >
+
+    </View>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sampleName"
+        android:id="@+id/recycle_mood_name"
+        android:layout_centerVertical="false"
+        android:layout_toRightOf="@id/recycle_preview_color"
+        android:layout_marginLeft="30dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sampleGenre"
+        android:id="@+id/recycle_mood_genre"
+        android:layout_below="@id/recycle_mood_name"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/recycle_preview_color"
+        android:layout_marginLeft="30dp"/>
+
+</RelativeLayout>
