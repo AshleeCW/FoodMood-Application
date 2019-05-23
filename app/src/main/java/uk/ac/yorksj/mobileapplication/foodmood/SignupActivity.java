@@ -35,22 +35,21 @@ public class SignupActivity extends AppCompatActivity {
     private String password;
     private String email;
     private ProgressDialog pDialog;
-    private String register_url = "???api/member/register.php"; // need to enter url of CS2S server
+    private String register_url = "http://ysjcs.net/~sam.holmes/member/db/register.php"; // need to enter url of CS2S server  "https://ysjcs.net/~sam.holmes/member/db/register.php"
     private SessionHandler session;
 
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+
 
         super.onCreate(savedInstanceState);
         session = new SessionHandler(getApplicationContext());
         setContentView(R.layout.activity_signup);
 
-        etUsername = findViewById(R.id.etUsername);
-        etPassword = findViewById(R.id.etPassword);
-        etEmail = findViewById(R.id.etEmail);
+        etUsername = findViewById(R.id.sUsername);
+        etPassword = findViewById(R.id.sPassword);
+        etEmail = findViewById(R.id.sEmailaddress);
 
         Button register = findViewById(R.id.button2);
 
@@ -154,4 +153,4 @@ public class SignupActivity extends AppCompatActivity {
 }
 
 
-}
+

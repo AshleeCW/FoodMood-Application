@@ -28,7 +28,7 @@ public class home extends AppCompatActivity {
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent cuisinePage = new Intent(view.getContext(), Cuisine.class);
+                Intent cuisinePage = new Intent(view.getContext(), SignupActivity.class);  //THIS NEEDS CHANGING BACK TO CUISINE
                 startActivity(cuisinePage);
             }
         });

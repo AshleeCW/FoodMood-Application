@@ -1,12 +1,13 @@
 package uk.ac.yorksj.mobileapplication.foodmood;
 
 import java.util.Date;
-import java.util.date;
+
 
 public class User {
 
     String username;
     String email;
+    private Date sessionExpiryDate;
 
     public void setUsername(String username) {
         this.username = username;

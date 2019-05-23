@@ -52,10 +52,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             }
             setContentView(R.layout.activity_main);
 
-            etUsername = findViewById(R.id.etLoginUsername);
-            etPassword = findViewById(R.id.etLoginPassword);
+            etUsername = findViewById(R.id.mUsername);
+            etPassword = findViewById(R.id.mPassword);
 
-            Button login = findViewById(findViewById(R.id.button));
+            Button login = (findViewById(R.id.loginButton));
 
             login.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -65,15 +65,17 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             username = etUsername.getText().toString().toLowerCase().trim();
             password = etPassword.getText().toString().trim();
 
-            if (validateInputs)) {
+            if (validateInputs()) {
                     login();
                     }
                 }
             });
         }
 
+
+
     private void loadHome() {
-            Intent i = new Intent(getApplicationContext(), homeActivity.class);
+            Intent i = new Intent(getApplicationContext(), home.class);
     }
 
     private void displayLoader() {
