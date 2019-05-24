@@ -21,61 +21,64 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
-        TextView t;
-        private static final String KEY_STATUS = "status";
-        private static final String KEY_MESSAGE = "message";        // need to add name category
-        private static final String KEY_EMAIL = "email";
-        private static final String KEY_USERNAME = "username";
-        private static final String KEY_PASSWORD = "password";
-        private static final String KEY_EMPTY = "";
-        private EditText etUsername;
-        private EditText etPassword;
-        private String username;
-        private String password;
-        private ProgressDialog pDialog;
-        private String login_url = "http://ysjcs.net/~david.benson/member/db/login.php"; // edit to change cs2s url
-        private SessionHandler session;
-        @Override
+    TextView t;
+    private static final String KEY_STATUS = "status";
+    private static final String KEY_MESSAGE = "message";        // need to add name category
+    private static final String KEY_EMAIL = "email";
+    private static final String KEY_USERNAME = "username";
+    private static final String KEY_PASSWORD = "password";
+    private static final String KEY_EMPTY = "";
+    private EditText etUsername;
+    private EditText etPassword;
+    private String username;
+    private String password;
+    private ProgressDialog pDialog;
+    private String login_url = "http://ysjcs.net/~david.benson/member/db/login.php";
+    private SessionHandler session;
+
+    @Override
 
     public void onCreate(Bundle savedInstanceState) {
 
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-            t = (TextView)findViewById(R.id.textView3);
-            t.setOnClickListener(this);
+        super.onCreate(savedInstanceState);
+
+//        setContentView(R.layout.activity_main);
+//        t = (TextView) findViewById(R.id.textView3);
+//        t.setOnClickListener(this);
 
 
-            session = new SessionHandler(getApplicationContext());
+        session = new SessionHandler(getApplicationContext());
 
-            if (session.isLoggedIn()){
-                loadHome();
-            }
-            setContentView(R.layout.activity_main);
-
-            etUsername = findViewById(R.id.mUsername);
-            etPassword = findViewById(R.id.mPassword);
-
-            Button login = (findViewById(R.id.loginButton));
-
-            login.setOnClickListener(new View.OnClickListener() {
-                @Override
-
-        public void onClick(View v) {
-
-            username = etUsername.getText().toString().toLowerCase().trim();
-            password = etPassword.getText().toString().trim();
-
-            if (validateInputs()) {
-                    login();
-                    }
-                }
-            });
+        if (session.isLoggedIn()) {
+            loadHome();
         }
+        setContentView(R.layout.activity_main);
 
+        etUsername = findViewById(R.id.mUsername);
+        etPassword = findViewById(R.id.mPassword);
+
+        Button login = (findViewById(R.id.loginButton));
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+
+            public void onClick(View v) {
+
+                username = etUsername.getText().toString().toLowerCase().trim();
+                password = etPassword.getText().toString().trim();
+
+                if (validateInputs()) {
+                    login();
+                }
+            }
+        });
+    }
 
 
     private void loadHome() {
-            Intent i = new Intent(getApplicationContext(), home.class);
+        Intent i = new Intent(getApplicationContext(), home.class);
+//        startActivity(i);
+//        finish();
     }
 
     private void displayLoader() {
@@ -104,10 +107,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                         try {
 
                             if (response.getInt(KEY_STATUS) == 0) {
-                                session.loginUser(username,response.getString(KEY_EMAIL));
+                                session.loginUser(username, response.getString(KEY_EMAIL));
                                 loadHome();
 
-                            }else{
+                            } else {
                                 Toast.makeText(getApplicationContext(),
                                         response.getString(KEY_MESSAGE), Toast.LENGTH_SHORT).show();
 
@@ -129,19 +132,19 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 });
 
         MySingleton.getInstance(this).addToRequestQueue(jsArrayRequest);
-        }
+    }
 
     private boolean validateInputs() {
-            if(KEY_EMPTY.equals(username)){
-                etUsername.setError("Username cannot be empty");
-                etUsername.requestFocus();
-                return false;
-            }
-    if (KEY_EMPTY.equals(password)){
-        etPassword.setError("Password cannot be empty");
-        etPassword.requestFocus();
-        return false;
-    }
+        if (KEY_EMPTY.equals(username)) {
+            etUsername.setError("Username cannot be empty");
+            etUsername.requestFocus();
+            return false;
+        }
+        if (KEY_EMPTY.equals(password)) {
+            etPassword.setError("Password cannot be empty");
+            etPassword.requestFocus();
+            return false;
+        }
 
         return true;
 
@@ -150,6 +153,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     public void onClick(View arg0) {
         Intent myintent = new Intent(MainActivity.this, SignupActivity.class);
         startActivity(myintent);
-        }
     }
+}
 
