@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             t = (TextView)findViewById(R.id.textView3);
             t.setOnClickListener(this);
 
-            super.onCreate(savedInstanceState);
+
             session = new SessionHandler(getApplicationContext());
 
             if (session.isLoggedIn()){

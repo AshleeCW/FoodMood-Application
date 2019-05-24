@@ -19,24 +19,27 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-
-
-
-
         <activity android:name=".Camera" />
         <activity android:name=".MoodsActivity" />
 
-        <activity android:name=".home">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".home"/>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
 
-        </activity>
+        <!--</activity>-->
 
         <activity android:name=".SignupActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
+    </activity>
         <activity android:name=".Cuisine" />
         <activity android:name=".PreferencesActivity" />
     </application>
