@@ -24,7 +24,7 @@ public class Camera extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 
-        button = findViewById(R.id.button);
+        button = findViewById(R.id.loginButton);
         imageView = findViewById(R.id.imageView);
 
         EnableRuntimePermission();
