@@ -16,24 +16,6 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/load"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Load"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.163"
-            app:layout_constraintStart_toEndOf="@+id/save"
-            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
-            app:layout_constraintVertical_bias="0.443" />
-
-        <Button
             android:id="@+id/save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -133,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:text="Name your mood:"
@@ -251,16 +233,13 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
             android:max="255"
             android:min="0"
             android:progress="100"
-            app:layout_constraintBottom_toTopOf="@+id/seekBarGreen"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.884"
+            app:layout_constraintHorizontal_bias="0.885"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8"
-            app:layout_constraintVertical_bias="0.938" />
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
         <SeekBar
             android:id="@+id/seekBarGreen"
@@ -268,17 +247,19 @@
             android:layout_height="17dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="96dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
             android:max="255"
             android:min="0"
             android:progress="100"
-            app:layout_constraintBottom_toBottomOf="@+id/colorPreview"
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.884"
+            app:layout_constraintHorizontal_bias="0.885"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/colorPreview" />
+            app:layout_constraintTop_toBottomOf="@+id/seekBarRed"
+            app:layout_constraintVertical_bias="0.0" />
 
         <SeekBar
             android:id="@+id/seekBarBlue"
@@ -295,10 +276,10 @@
             android:progress="100"
             app:layout_constraintBottom_toTopOf="@+id/textView6"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.884"
+            app:layout_constraintHorizontal_bias="0.885"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/seekBarGreen"
-            app:layout_constraintVertical_bias="0.098" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -342,13 +323,5 @@
 
     </android.support.constraint.ConstraintLayout>
 
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
 
 </android.support.design.widget.CoordinatorLayout>

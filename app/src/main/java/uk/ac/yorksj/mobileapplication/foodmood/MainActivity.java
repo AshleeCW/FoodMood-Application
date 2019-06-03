@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
 
 //        if (session.isLoggedIn()) {
-//            loadHome();
-//        }
+  //          loadHome();
+    //    }
         setContentView(R.layout.activity_main);
 
         etUsername = findViewById(R.id.mUsername);

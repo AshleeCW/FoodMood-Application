@@ -165,31 +165,6 @@ public class PreferencesActivity extends AppCompatActivity {
                 //editor.apply();//change to commit if error here
             }
         });
-
-        Button load = findViewById(R.id.load);
-        load.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences prefs = getPreferences(getBaseContext().MODE_PRIVATE);
-                String mood = prefs.getString("mood", "DEFAULT");
-
-                Gson gson = new Gson();
-                Mood userMadeMood = gson.fromJson(mood, Mood.class);
-                moodName = userMadeMood.getName();
-                moodGenre = userMadeMood.getGenre();
-            }
-        });
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, moodGenre, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-
         //ToolBar code
 
         ImageView imageView = findViewById(R.id.homeBut);
