@@ -177,7 +177,7 @@ public class PreferencesActivity extends AppCompatActivity {
         });
 
     }
-
+    //Compare the id of each image
     public String genreSelector(View view){
         RadioGroup genreRadioGroup = findViewById(R.id.genreRadioGroup);
         switch (genreRadioGroup.getCheckedRadioButtonId()){
