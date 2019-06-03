@@ -41,17 +41,16 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
-//        setContentView(R.layout.activity_main);
-//        t = (TextView) findViewById(R.id.textView3);
-//        t.setOnClickListener(this);
-
-
         session = new SessionHandler(getApplicationContext());
 
-        if (session.isLoggedIn()) {
-            loadHome();
-        }
+        setContentView(R.layout.activity_main);
+        t = findViewById(R.id.textView3);
+        t.setOnClickListener(this);
+
+
+//        if (session.isLoggedIn()) {
+//            loadHome();
+//        }
         setContentView(R.layout.activity_main);
 
         etUsername = findViewById(R.id.mUsername);
@@ -77,8 +76,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     private void loadHome() {
         Intent i = new Intent(getApplicationContext(), home.class);
-//        startActivity(i);
-//        finish();
+        startActivity(i);
+        finish();
     }
 
     private void displayLoader() {
